@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/maven,eclipse,java,intellij
-# Edit at https://www.toptal.com/developers/gitignore?templates=maven,eclipse,java,intellij
+# Created by https://www.toptal.com/developers/gitignore/api/java,maven,eclipse,intellij,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,maven,eclipse,intellij,visualstudiocode
 
 ### Eclipse ###
 .metadata
@@ -225,4 +225,23 @@ buildNumber.properties
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
-# End of https://www.toptal.com/developers/gitignore/api/maven,eclipse,java,intellij
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/java,maven,eclipse,intellij,visualstudiocode
