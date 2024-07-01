@@ -1,3 +1,6 @@
+LeetCode/aa
+
+
 # Created by https://www.toptal.com/developers/gitignore/api/java,maven,eclipse,intellij,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,maven,eclipse,intellij,visualstudiocode
 
@@ -245,4 +248,3 @@ buildNumber.properties
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/java,maven,eclipse,intellij,visualstudiocode
-LeetCode/aa
