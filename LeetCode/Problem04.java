@@ -15,6 +15,7 @@ public class Problem04 {
 
         boolean posFound=false;
         while(!posFound){
+
             mid1[2]=(mid1[0]+mid1[1])/2;
             mid2[2]=(mid2[0]+mid2[1])/2;
             if(mid1[1]<mid1[0]){
@@ -30,15 +31,14 @@ public class Problem04 {
                 int maxRight=mid1[1]+1+mid2[2];
                 int minLeft=mid1[2];
                 int maxLeft = mid1[2]+mid2[2];
-                if(pos<minLeft){
-                    mid1[1]=mid1[2]-1;
-                }
-                else if(pos>maxRight){
-                    mid2[0]=mid2[2]+1;
-                }else if(pos<minRight){ 
-                    mid2[1]=mid2[2]-1; //remove right from nums2
-                }else if(pos>maxLeft){
-                    mid1[0]=mid1[2]+1;// remove left from nums1
+                if(pos<=minLeft){//implies <minRight, <maxRight, <maxLeft
+                    mid1[1]=mid1[2]; //
+                }else if (pos>maxLeft && pos <=minRight){
+                    mid1[0]=(mid1[1]-mid1[0])>0?mid1[2]+1:mid1[1];
+                    mid2[1]=mid2[2];
+                }else if(pos>=maxRight){ //implies >maxLeft and >minRight,>minLeft
+                    mid1[0]=(mid1[1]-mid1[0])>0?mid1[2]+1:mid1[1];
+                    mid2[0]=mid2[2];// remove left from nums1
                 }else if(minRight==maxRight && minRight==pos){
                     return (double) nums2[mid2[2]];
                 }
@@ -47,15 +47,14 @@ public class Problem04 {
                 int maxLeft=mid2[1]+1+mid1[2];
                 int minRight=mid2[2];
                 int maxRight = mid2[2]+mid1[2];
-                if(pos<minRight){
-                    mid2[1]=mid2[2]-1;
-                }else if(pos<minLeft){ 
-                    mid1[1]=mid1[2]-1; //remove right from nums2
-                }else if(pos>maxLeft){
-                    mid1[0]=mid1[2]+1;// remove left from nums1
-                }else if(pos>maxRight){
-                    mid2[0]=mid2[2]+1;
-                }else if(minLeft==maxLeft && maxLeft==pos){
+                if(pos<=minRight){//implies <minRight, <maxRight, <maxLeft
+                    mid2[1]=mid2[2]; //
+                }else if (pos>maxRight && pos <=minLeft){
+                    mid2[0]=(mid2[1]-mid2[0])>0?mid2[2]+1:mid2[1];
+                    mid1[1]=mid1[2];
+                }else if(pos>=maxLeft){ //implies >maxLeft and >minRight,>minLeft
+                    mid1[0]=mid1[2];// remove left from nums1
+                }else if(minLeft==maxLeft && minLeft==pos){
                     return (double) nums1[mid1[2]];
                 }
             }
@@ -100,7 +99,7 @@ public class Problem04 {
         // System.out.println(kthSmallest(5,new int[]{2,3,4,5,6},new int[]{1}));
 
         //1,2,3,4,5,6,7,8
-        System.out.println(kthSmallest(4,new int[]{1,7},new int[]{2,3,4,5,6,8}));
+        System.out.println(kthSmallest(3,new int[]{1,7},new int[]{2,3,4,5,6,8}));
 
         // System.out.println(kthSmallest(0,new int[]{1},new int[]{2,3,4,5,6}));
         // System.out.println(kthSmallest(1,new int[]{1},new int[]{2,3,4,5,6}));
