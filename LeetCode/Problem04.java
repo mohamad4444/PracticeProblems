@@ -1,3 +1,4 @@
+
 public class Problem04 {
     public static int kthSmallest(int k,int[] nums1, int[] nums2) {
         // Ensure nums1 is the smaller array

@@ -1,3 +1,4 @@
+
 import java.util.HashMap;
 class Problem01 {
     //Brute Force
@@ -32,5 +33,9 @@ class Problem01 {
         }
 
         return new int[]{}; // No solution found
+    }
+    public static void main(String[] args) {
+        Problem01 solution=new Problem01();
+        
     }
 }

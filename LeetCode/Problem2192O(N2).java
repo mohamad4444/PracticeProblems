@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Problem2192 {
+class Problem2192v2 {
     public static List<List<Integer>> getAncestors(int n, int[][] edges) {
         List<List<Integer>> res = new ArrayList<>();
         List<List<Integer>> treeGraph = new ArrayList<>();
