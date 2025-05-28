@@ -7,29 +7,23 @@ public class Problem20 {
             return false;
         }
         Deque<Character> stack = new ArrayDeque<>();
-        for(int i=0;i<s.length();i++){
-            Character cchar=s.charAt(i);
-            if(cchar=='('||cchar=='['||cchar=='{'){
-                stack.push(getOpposite(cchar));
-            }else {
-            Character lastInStack=stack.poll();
-            if(lastInStack!=cchar){
+        for(char cchar:s.toCharArray()){
+            if(cchar=='('){
+                stack.push(')');
+            }else if(cchar=='[') {
+                stack.push(']');
+            }else if(cchar=='{'){
+                stack.push('}');
+            }else if (stack.isEmpty() ||stack.poll()!=cchar){
                 return false;
             }
         }
-        }
-        return stack.size()==0;
-    }
-    public static char getOpposite(char c) {
-        if (c == '[') return ']';
-        else if (c == '(') return ')';
-        else if (c == '{') return '}';
-        else return '\0';
+        return stack.isEmpty();
     }
     
     public static void main(String[] args) {
         Problem20 p15=new Problem20();
-        System.err.println("\n"+p15.isValid("(("));
+        System.err.println("\n"+p15.isValid("){"));
     }
     
 }
