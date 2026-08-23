@@ -1,8 +1,9 @@
 
 import java.util.HashMap;
+import java.util.Map;
 class Problem01 {
     //Brute Force
-    public int[] twoSum1(int[] nums, int target) {
+    public int[] twoSum0(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             int sum = 0;
             for (int j = 1; j < nums.length; j++) {
@@ -17,7 +18,7 @@ class Problem01 {
         return new int[] { 0, 0 };
     }
     //Hash Method
-    public int[] twoSum(int[] nums, int target) {
+    public int[] twoSum1(int[] nums, int target) {
         HashMap<Integer, Integer> numMap = new HashMap<>();
         int n = nums.length;
 
@@ -34,6 +35,24 @@ class Problem01 {
 
         return new int[]{}; // No solution found
     }
+    // One Hash Method
+    class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> numMap = new HashMap<>();
+        int n = nums.length;
+
+        for (int i = 0; i < n; i++) {
+            int complement = target - nums[i];
+            if (numMap.containsKey(complement)) {
+                return new int[]{numMap.get(complement), i};
+            }
+            numMap.put(nums[i], i);
+        }
+
+        return new int[]{}; // No solution found
+    }
+}
+
     public static void main(String[] args) {
         Problem01 solution=new Problem01();
         
